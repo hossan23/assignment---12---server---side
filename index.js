@@ -4,6 +4,7 @@ const cors = require('cors');
 const port = process.env.PORT || 5000;
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+var jwt = require('jsonwebtoken');
 // middleWare
 
 app.use(cors());
@@ -70,7 +71,7 @@ async function run() {
 
   app.post('/surveys', async (req, res) => {
    const data = req.body;
-   // Include the current timestamp in the data
+
    data.date = new Date();
    const result = await surveysCollection.insertOne(data);
    res.send(result);
@@ -146,7 +147,7 @@ async function run() {
   });
 
   // Send a ping to confirm a successful connection
-  await client.db('admin').command({ ping: 1 });
+  //   await client.db('admin').command({ ping: 1 });
   //   they said i must delete the upper line
   //   they said i must delete
   //   they said i must delete
