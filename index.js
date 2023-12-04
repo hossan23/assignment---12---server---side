@@ -114,8 +114,11 @@ async function run() {
      adminFeedback: data.adminFeedback,
     },
    };
-   if ((data.commentText && data.commentText.length > 0) || (data.report && data.report.length > 0)) {
-    updateDoc.$push = { commentText: data.commentText, report: data.report };
+   if (data.commentText && data.commentText.length > 0) {
+    updateDoc.$push = { commentText: data.commentText };
+   }
+   if (data.report && data.report.length > 0) {
+    updateDoc.$push = { report: data.report };
    }
    const result = await surveysCollection.updateOne(filter, updateDoc, { upsert: true });
    res.send(result);
