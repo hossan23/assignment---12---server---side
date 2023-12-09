@@ -1,9 +1,9 @@
-### server side difficulties that i faced
 
-- managing to many api
-- faced difficulties for put method
-- faced difficulties for patch method
-- faced difficulties for put method increment
-- faced difficulties for put method push$
+## Features
+
+- Uses Express.js for easy server setup and handling HTTP requests.
+- Connects to MongoDB Atlas and defines collections for users, surveys, and voters.
+- Supports CRUD operations for users, surveys, and voters through various API endpoints.
+- Includes functionality to create payment intents for secure credit card transactions using the Stripe API.
 
 ### Live site link : https://assignment---12-f3db6.web.app
